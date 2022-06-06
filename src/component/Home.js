@@ -1,12 +1,15 @@
-import React from 'react'
-import Header from '../util/header'
-
+import React from 'react';
+import Header from '../modules/header';
+import Navbar from '../modules/navbar';
+import Footer from '../modules/footer';
 
 
 export default function Home() {
   return (
     <div>
-        <Header />
+        {/* <Header /> */}
+        <Navbar />
+        <Footer />
     </div>
   )
 }
