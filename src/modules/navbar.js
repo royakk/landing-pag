@@ -3,6 +3,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import Slider from './carousel'
 
 const user = {
   name: 'Tom Cook',
@@ -55,7 +56,7 @@ export default function Example() {
                     <div className="flex-shrink-0">
                       <img
                         className="h-8 w-8"
-                        src='../images/logo.png'
+                        src={require('../images/logo.png')}
                         
                       />
                     </div>
@@ -202,13 +203,16 @@ export default function Example() {
           </div>
         </header>
         <main>
-          <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-            {/* Replace with your content */}
-            <div className="px-4 py-6 sm:px-0">
-              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
-            </div>
-            {/* /End replace */}
+          <div className="slider">
+                    <Slider />
           </div>
+          {/* <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8"> */}
+            {/* Replace with your content */}
+            {/* <div className="px-4 py-6 sm:px-0">
+              <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
+            </div> */}
+            {/* /End replace */}
+          {/* </div> */}
         </main>
       </div>
     </>

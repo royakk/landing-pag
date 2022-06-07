@@ -15,7 +15,7 @@ const footer = () => {
     </span>
 </div>
 
-<footer className="bg-gray-800 pt-1 sm:mt-5 pt-5" >
+<footer className="bg-gray-800 pt-1  sm:mt-10 pt-10" >
     <div className="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-left">
         
         <div className="p-5 w-1/2 sm:w-4/12 md:w-3/12 h-3/6">
