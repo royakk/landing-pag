@@ -1,9 +1,11 @@
 
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import Slider from './carousel'
+import { Fragment } from 'react';
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import Slider from './carousel';
+import Lang from './langouege';
+import Locales from './locales';
 
 const user = {
   name: 'Tom Cook',
@@ -92,15 +94,18 @@ export default function Example() {
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="ml-3 relative">
+                       
                         <div>
-                      
+  
                           <Menu.Item class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <label>Login</label>
                           </Menu.Item>
                           <Menu.Item class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                             <label>Sign Up</label>
                           </Menu.Item>
+                          
                         </div>
+                        
                         <Transition
                           as={Fragment}
                           enter="transition ease-out duration-100"
@@ -204,8 +209,13 @@ export default function Example() {
         </header>
         <main>
           <div className="slider">
+            
                     <Slider />
+                    
+
           </div>
+          <div className="lang"><Locales />
+                          </div>
           {/* <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8"> */}
             {/* Replace with your content */}
             {/* <div className="px-4 py-6 sm:px-0">

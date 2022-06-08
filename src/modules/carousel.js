@@ -11,8 +11,8 @@ const contentStyle = {
 const Slider = () => (
   <Carousel autoplay>
     <div>
-      <img src={require('../images/slider01.png')}
-                          />
+      <img src={require('../images/slider01.png')} />
+                          
    
     </div>
     <div>

@@ -5,13 +5,25 @@ import App from './App';
 import { ConfigProvider } from 'antd';
 import 'antd/dist/antd.css';
 import { Carousel } from 'antd';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { enUS } from '@mui/material/locale';
+
+
+const theme = createTheme(
+  {
+    palette: {
+      primary: { main: '#1976d2' },
+    },
+  },
+ enUS,
+);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ConfigProvider direction="rtl">
+  <ThemeProvider theme={theme}>
     <App />
-    </ConfigProvider>
+    </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
