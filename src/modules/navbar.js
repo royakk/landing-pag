@@ -1,11 +1,11 @@
 
-/* This example requires Tailwind CSS v2.0+ */
+// import { useDemoData } from '@mui/x-data-grid-generator';
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import Slider from './carousel';
-import Lang from './langouege';
-import Locales from './locales';
+import DataGridProDemo from './dataGrid'
+
 
 const user = {
   name: 'Tom Cook',
@@ -29,13 +29,24 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+const rows = [
+  { id: 1, col1: 'Hello', col2: 'World' },
+  { id: 2, col1: 'DataGridPro', col2: 'is Awesome' },
+  { id: 3, col1: 'MUI', col2: 'is Amazing' },
+];
+const columns = [
+  { field: 'col1', headerName: 'Column 1', width: 150 },
+  { field: 'col2', headerName: 'Column 2', width: 150 },
+];
 
 export default function Example() {
   return (
     <>
+    
       {/*
         This example requires updating your template:
 
@@ -48,7 +59,7 @@ export default function Example() {
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
             <>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                   <div className="flex items-center">
                     <div className="flex items-center" > 
@@ -95,7 +106,7 @@ export default function Example() {
                       {/* Profile dropdown */}
                       <Menu as="div" className="ml-3 relative">
                        
-                        <div>
+                        {/* <div>
   
                           <Menu.Item class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <label>Login</label>
@@ -104,7 +115,7 @@ export default function Example() {
                             <label>Sign Up</label>
                           </Menu.Item>
                           
-                        </div>
+                        </div> */}
                         
                         <Transition
                           as={Fragment}
@@ -203,19 +214,19 @@ export default function Example() {
         </Disclosure>
 
         <header className="bg-white shadow">
-          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-gray-900">Pilmoex</h1>
-          </div>
+         
         </header>
         <main>
           <div className="slider">
             
                     <Slider />
+                    <DataGridProDemo rows={rows} columns={columns}/>
+
                     
 
           </div>
-          <div className="lang"><Locales />
-                          </div>
+          {/* <div className="lang"><Locales />
+                          </div> */}
           {/* <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8"> */}
             {/* Replace with your content */}
             {/* <div className="px-4 py-6 sm:px-0">

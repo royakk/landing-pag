@@ -11,15 +11,22 @@ const contentStyle = {
 const Slider = () => (
   <Carousel autoplay>
     <div>
-      <img src={require('../images/slider01.png')} />
-                          
-   
+    <img style={{width:"65%",height: "637px",
+  display: "block",
+  margin: "auto",
+  position:" relative"}} src={require('../images/1.jpg')} />
     </div>
     <div>
-    <img src={require('../images/slider02.png')}  />  
+    <img style={{width:"65%",height: "637px",
+  display: "block",
+  margin: "auto",
+  position:" relative"}} src={require('../images/slider02.png')}  />  
     </div>
     <div>
-    <img src={require('../images/slider03.png')}  />
+    <img style={{width:"65%",height: "637px",
+  display: "block",
+  margin: "auto",
+  position:" relative"}} src={require('../images/slider03.png')}  />
     </div>
   </Carousel>
 );
