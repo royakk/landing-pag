@@ -8,22 +8,22 @@ const contentStyle = {
   background: '#364d79',
 };
 
-const Slider = () => (
+const Slider = (props) => (
   <Carousel autoplay>
     <div>
-    <img style={{width:"65%",height: "637px",
+    <img style={{width:props.width,height: props.height,
   display: "block",
   margin: "auto",
   position:" relative"}} src={require('../images/1.jpg')} />
     </div>
     <div>
-    <img style={{width:"65%",height: "637px",
+    <img style={{width:props.width,height: props.height,
   display: "block",
   margin: "auto",
   position:" relative"}} src={require('../images/slider02.png')}  />  
     </div>
     <div>
-    <img style={{width:"65%",height: "637px",
+    <img style={{width:props.width,height: props.height,
   display: "block",
   margin: "auto",
   position:" relative"}} src={require('../images/slider03.png')}  />

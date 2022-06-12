@@ -3,47 +3,17 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import Slider from './carousel';
-import DataGridProDemo from './dataGrid'
+// import Slider from './carousel';
+// import DataGridProDemo from './dataGrid'
 
 
-const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-}
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'OTC', href: '#', current: false },
-  { name: 'Learning', href: '#', current: false },
-  { name: 'Rules and Regulations', href: '#', current: false },
-  { name: 'About us', href: '#', current: false },
-  { name: 'Contact us', href: '#', current: false },
-  { name: 'Markets', href: '#', current: false },
-  
-]
-const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'test', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
 
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-const rows = [
-  { id: 1, col1: 'Hello', col2: 'World' },
-  { id: 2, col1: 'DataGridPro', col2: 'is Awesome' },
-  { id: 3, col1: 'MUI', col2: 'is Amazing' },
-];
-const columns = [
-  { field: 'col1', headerName: 'Column 1', width: 150 },
-  { field: 'col2', headerName: 'Column 2', width: 150 },
-];
 
-export default function Example() {
+export default function Example(props) {
   return (
     <>
     
@@ -75,7 +45,7 @@ export default function Example() {
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
-                        {navigation.map((item) => (
+                        {props.navigation.map((item) => (
                           <a
                             key={item.name}
                             href={item.href}
@@ -127,7 +97,7 @@ export default function Example() {
                           leaveTo="transform opacity-0 scale-95"
                         >
                           <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            {userNavigation.map((item) => (
+                            {props.navigation.map((item) => (
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
                                   <a
@@ -163,7 +133,7 @@ export default function Example() {
 
               <Disclosure.Panel className="md:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                  {navigation.map((item) => (
+                  {props.navigation.map((item) => (
                     <Disclosure.Button
                       key={item.name}
                       as="a"
@@ -181,11 +151,11 @@ export default function Example() {
                 <div className="pt-4 pb-3 border-t border-gray-700">
                   <div className="flex items-center px-5">
                     <div className="flex-shrink-0">
-                      <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                      <img className="h-10 w-10 rounded-full" src={props.user.imageUrl} alt="" />
                     </div>
                     <div className="ml-3">
-                      <div className="text-base font-medium leading-none text-white">{user.name}</div>
-                      <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
+                      <div className="text-base font-medium leading-none text-white">{props.user.name}</div>
+                      <div className="text-sm font-medium leading-none text-gray-400">{props.user.email}</div>
                     </div>
                     <button
                       type="button"
@@ -196,7 +166,7 @@ export default function Example() {
                     </button>
                   </div>
                   <div className="mt-3 px-2 space-y-1">
-                    {userNavigation.map((item) => (
+                    {props.userNavigation.map((item) => (
                       <Disclosure.Button
                         key={item.name}
                         as="a"
@@ -219,8 +189,7 @@ export default function Example() {
         <main>
           <div className="slider">
             
-                    <Slider />
-                    <DataGridProDemo rows={rows} columns={columns}/>
+                    
 
                     
 
