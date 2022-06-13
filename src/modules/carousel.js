@@ -1,5 +1,7 @@
 import { Carousel } from 'antd';
 import React from 'react';
+import 'antd/dist/antd.css';
+
 const contentStyle = {
   height: '160px',
   color: '#fff',
@@ -10,8 +12,13 @@ const contentStyle = {
 
 const Slider = (props) => (
   <Carousel autoplay>
+    {props.imgurlslider.map((item) =>(   
     <div>
-    <img style={{width:props.width,height: props.height,
+  <img style={props.styleCarosel} src={item.image} />
+  
+      </div>
+    ))}  
+    {/* <img style={{width:props.width,height: props.height,
   display: "block",
   margin: "auto",
   position:" relative"}} src={require('../images/1.jpg')} />
@@ -26,9 +33,11 @@ const Slider = (props) => (
     <img style={{width:props.width,height: props.height,
   display: "block",
   margin: "auto",
-  position:" relative"}} src={require('../images/slider03.png')}  />
-    </div>
+  position:" relative"}} src={require('../images/slider03.png')}  /> */}
+    
   </Carousel>
 );
 
 export default Slider;
+
+

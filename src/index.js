@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-// import 'flowbite';
-import { ConfigProvider } from 'antd';
-import 'antd/dist/antd.css';
-import { Carousel } from 'antd';
+// import { ConfigProvider } from 'antd';
+
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { enUS } from '@mui/material/locale';
 

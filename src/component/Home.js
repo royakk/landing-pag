@@ -4,8 +4,7 @@ import Navbar from '../modules/navbar';
 import Footer from '../modules/footer';
 import Slider from '../modules/carousel';
 import DataGridProDemo from '../modules/dataGrid';
-const width = '65%';
-const height = '637px';
+
 const rows = [
     {
         id: 1,
@@ -39,6 +38,13 @@ const style = {
     position: ' relative',
     height: '20em',
     width: '65%'
+}
+const styleCarosel={
+    display: 'block',
+    margin: 'auto',
+    position: 'relative',
+    width : '65%',
+    height : '637px'
 }
 
 const user = {
@@ -94,7 +100,20 @@ const userNavigation = [
     },
 ]
 const footerItem = ['Getting Started', 'Core Concepts', 'Customization', 'Community']
-
+const imgurlslider = [{
+    
+    image: '../images/1.jpg'
+  },
+  {
+    
+    image: '../images/slider02.png'
+  },
+  {
+    
+    image: '../images/slider03.png'
+  }
+      
+   ]
 const footerItems = new Map();
 footerItems.set('Getting Started', [
     {
@@ -158,8 +177,8 @@ export default function Home() {
             <Navbar user={user}
                 navigation={navigation}
                 userNavigation={userNavigation}/>
-            <Slider width={width}
-                height={height}/>
+            <Slider styleCarosel={styleCarosel}
+              imgurlslider={imgurlslider} />
             <DataGridProDemo rows={rows}
                 columns={columns}
                 style1={style}/>
