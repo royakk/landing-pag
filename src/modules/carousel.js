@@ -14,8 +14,11 @@ const Slider = (props) => (
   <Carousel autoplay>
     {props.imgurlslider.map((item) =>(   
     <div>
-  <img style={props.styleCarosel} src={item.image} />
-  
+  <img style={props.styleCarosel} src={require(item.image)} />
+  {/* src={require('../../../assets/images/website/homepage/' +
+        item.image +
+        '.png')}
+   */}
       </div>
     ))}  
     {/* <img style={{width:props.width,height: props.height,
