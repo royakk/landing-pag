@@ -1,9 +1,19 @@
 import React from 'react';
-import Header from '../modules/header';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../modules/navbar';
 import Footer from '../modules/footer';
-import Slider from '../modules/carousel';
+// import Slider from '../modules/carousel';
 import DataGridProDemo from '../modules/dataGrid';
+import i18n from 'i18next';
+
+
+
+// import './i18n.js';
+
+
+
+
+
 
 const rows = [
     {
@@ -172,20 +182,27 @@ const footerIcon = [
 ]
 
 export default function Home() {
+    const {t} = useTranslation (); 
+    
     return (
         <div> {/* <Header /> */}
+       
             <Navbar user={user}
                 navigation={navigation}
                 userNavigation={userNavigation}/>
-            <Slider styleCarosel={styleCarosel}
-              imgurlslider={imgurlslider} />
+            {/* <Slider styleCarosel={styleCarosel}
+              imgurlslider={imgurlslider} /> */}
             <DataGridProDemo rows={rows}
                 columns={columns}
                 style1={style}/>
+                
             <Footer footerItem={footerItem}
                 footerItems={footerItems}
                 footerIcon
                 ={footerIcon }/>
+               <h2>{t('wlc_to_react')}</h2>
+               
         </div>
+        
     )
 }
