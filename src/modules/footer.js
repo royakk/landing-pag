@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
-const footer = (props) => {
+import { useTranslation } from 'react-i18next';
+import i18n,{t} from 'i18next';
+const Footer = (props) => {
     console.log(props.footerIcon)
+    const {t} = useTranslation (); 
+    console.log("======ali==============")
+  console.log(props)
+  console.log("=========ali=================")
     return (
 
         <>
@@ -15,7 +21,7 @@ const footer = (props) => {
                     props.footerItem.map((item) => (
                         <div className="p-5 w-1/2 sm:w-4/12 md:w-3/12 h-3/6">
                             <div className="text-xs uppercase text-gray-400 font-medium mb-6">
-                                {item} </div>
+                              {t(item)}  </div>
 
                             {
                             props.footerItems.get(item).map((item2) => (
@@ -23,9 +29,8 @@ const footer = (props) => {
                                         item2.href
                                     }
                                     className="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
-                                    {
-                                    item2.text
-                                } </a>
+                                    {t(item2.text)}
+                                 </a>
                             ))
                         } </div>
                     ))
@@ -35,7 +40,7 @@ const footer = (props) => {
                                             border-t border-gray-500 text-gray-400 text-sm
                                             flex-col md:flex-row max-w-6xl">
                             <div className="mt-2">
-                                © Copyright 1998-year. All Rights Reserved.
+                                 {t('cpy')}
                             </div>
 
 
@@ -69,4 +74,4 @@ const footer = (props) => {
     );
 }
 
-export default footer;
+export default Footer;

@@ -1,12 +1,14 @@
 
 // import { useDemoData } from '@mui/x-data-grid-generator';
 import { Fragment } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 // import Slider from './carousel';
 // import DataGridProDemo from './dataGrid'
 import Button from './button';
-
+import { containerClasses } from '@mui/material';
+import i18n,{t} from 'i18next';
 
 
 
@@ -16,6 +18,8 @@ function classNames(...classes) {
 }
 
 export default function Example(props) {
+  
+  const {t} = useTranslation (); 
   return (
     <>
     
@@ -59,7 +63,7 @@ export default function Example(props) {
                             )}
                             aria-current={item.current ? 'page' : undefined}
                           >
-                            {item.name}
+                            {t(item.name)}
                           </a>
                         ))}
                       </div>

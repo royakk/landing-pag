@@ -4,14 +4,10 @@ import Navbar from '../modules/navbar';
 import Footer from '../modules/footer';
 // import Slider from '../modules/carousel';
 import DataGridProDemo from '../modules/dataGrid';
-import i18n from 'i18next';
-
-
-
-// import './i18n.js';
-
-
-
+import  image1 from '../images/1.jpg'
+import  image2 from '../images/slider02.png'
+import  image3 from '../images/slider03.png'
+import i18n,{t} from 'i18next';
 
 
 
@@ -74,20 +70,20 @@ const navigation = [
         current: false
     },
     {
-        name: 'Learning',
+        name:'Learning' ,
         href: '#',
         current: false
     },
     {
-        name: 'Rules and Regulations',
+        name: 'Rules_and_Regulations',
         href: '#',
         current: false
     }, {
-        name: 'About us',
+        name: 'About_us',
         href: '#',
         current: false
     }, {
-        name: 'Contact us',
+        name: 'Contact_us',
         href: '#',
         current: false
     }, {
@@ -109,61 +105,57 @@ const userNavigation = [
         href: '#'
     },
 ]
-const footerItem = ['Getting Started', 'Core Concepts', 'Customization', 'Community']
+const footerItem = ['Links','About_us' ,'Subscribe' ]
 const imgurlslider = [{
     
-    image: '../images/1.jpg'
+    image: image1
   },
   {
     
-    image: '../images/slider02.png'
+    image: image2
   },
   {
     
-    image: '../images/slider03.png'
+    image: image3
   }
       
    ]
 const footerItems = new Map();
-footerItems.set('Getting Started', [
+footerItems.set('Links', [
     {
-        text: 'Test1',
+        text: 'Work_with_us',
         href: 'http://google.com'
     }, {
-        text: 'Test1',
+        text: 'Security',
         href: 'google.com'
     }
 ]);
-footerItems.set('Core Concepts', [
+footerItems.set('About_us', [
     {
-        text: 'Test1',
+        text: 'Contact_us',
         href: 'google.com'
     }, {
-        text: 'Test1',
+        text: 'About_us',
         href: 'google.com'
     }, {
-        text: 'Test1',
+        text:'Blog',
         href: 'google.com'
     }
 ]);
-footerItems.set('Customization', [
+footerItems.set('Subscribe', [
     {
-        text: 'Test1',
+        text:'Rules_and_Regulations',
         href: 'google.com'
     }, {
-        text: 'Test1',
+        text: 'User_guide',
         href: 'google.com'
-    }
-]);
-footerItems.set('Community', [
+    },
     {
-        text: 'Test1',
-        href: 'google.com'
-    }, {
-        text: 'Test1',
+        text: 'Fee',
         href: 'google.com'
     }
 ]);
+
 
 const footerIcon = [
     {
@@ -185,22 +177,23 @@ export default function Home() {
     const {t} = useTranslation (); 
     
     return (
-        <div> {/* <Header /> */}
+        <div> 
        
             <Navbar user={user}
                 navigation={navigation}
                 userNavigation={userNavigation}/>
-            {/* <Slider styleCarosel={styleCarosel}
-              imgurlslider={imgurlslider} /> */}
+            {/* <Slider styleCarosel={styleCarosel} */}
+              {/* imgurlslider={imgurlslider} /> */}
             <DataGridProDemo rows={rows}
                 columns={columns}
                 style1={style}/>
+             <h1>{t('wlc_to_react')}</h1>
                 
             <Footer footerItem={footerItem}
                 footerItems={footerItems}
                 footerIcon
                 ={footerIcon }/>
-               <h2>{t('wlc_to_react')}</h2>
+               
                
         </div>
         
