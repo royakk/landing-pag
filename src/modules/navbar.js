@@ -7,8 +7,6 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 // import Slider from './carousel';
 // import DataGridProDemo from './dataGrid'
 import Button from './button';
-import { containerClasses } from '@mui/material';
-import i18n,{t} from 'i18next';
 
 
 
@@ -45,7 +43,7 @@ export default function Example(props) {
                     <div className="flex-shrink-0">
                       <img
                         className="h-8 w-8"
-                        src={require('../images/logo.png')}
+                        src='images/logo.png'
                         
                       />
                     </div>

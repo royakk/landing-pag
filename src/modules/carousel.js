@@ -2,6 +2,9 @@ import { Carousel } from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
 
+
+
+
 const contentStyle = {
   height: '160px',
   color: '#fff',
@@ -16,7 +19,7 @@ const Slider = (props) => (
     {props.imgurlslider.map((item) =>(   
     <div>
 
-  <img style={props.styleCarosel} src={require(item.image)} />
+  <img style={props.styleCarosel} src={item.image}/>
   {/* src={require('../../../assets/images/website/homepage/' +
         item.image +
         '.png')}

@@ -2,12 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from '../modules/navbar';
 import Footer from '../modules/footer';
-// import Slider from '../modules/carousel';
+import Slider from '../modules/carousel';
 import DataGridProDemo from '../modules/dataGrid';
-import  image1 from '../images/1.jpg'
-import  image2 from '../images/slider02.png'
-import  image3 from '../images/slider03.png'
-import i18n,{t} from 'i18next';
+
 
 
 
@@ -65,7 +62,7 @@ const navigation = [
         current: true
     },
     {
-        name: 'OTC',
+        name: 'otc',
         href: '#',
         current: false
     },
@@ -108,15 +105,15 @@ const userNavigation = [
 const footerItem = ['Links','About_us' ,'Subscribe' ]
 const imgurlslider = [{
     
-    image: image1
+    image: "images/1.jpg"
   },
   {
     
-    image: image2
+    image: "images/slider01.png"
   },
   {
     
-    image: image3
+    image: "images/slider02.png"
   }
       
    ]
@@ -182,13 +179,12 @@ export default function Home() {
             <Navbar user={user}
                 navigation={navigation}
                 userNavigation={userNavigation}/>
-            {/* <Slider styleCarosel={styleCarosel} */}
-              {/* imgurlslider={imgurlslider} /> */}
+            <Slider styleCarosel={styleCarosel} 
+               imgurlslider={imgurlslider} /> 
             <DataGridProDemo rows={rows}
                 columns={columns}
                 style1={style}/>
-             <h1>{t('wlc_to_react')}</h1>
-                
+        
             <Footer footerItem={footerItem}
                 footerItems={footerItems}
                 footerIcon

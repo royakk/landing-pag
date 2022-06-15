@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n,{t} from 'i18next';
+
+
+
+
 const Footer = (props) => {
     console.log(props.footerIcon)
     const {t} = useTranslation (); 
